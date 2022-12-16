@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages
 
 void main() {
   runApp(const MyApp());
@@ -16,35 +15,22 @@ class MyApp extends StatelessWidget {
   }
 }
 
-void save() {
-  // ignore: avoid_print
-  print("Saved");
-}
-
-void cancel() {
-  // ignore: avoid_print
-  print("canceled");
-}
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // ignore: todo
-    // TODO: implement build
-    //throw UnimplementedError();
     return Scaffold(
         appBar: AppBar(
             //automaticallyImplyLeading: false,
-            backgroundColor: Color.fromARGB(255, 225, 173, 235),
+            backgroundColor: const Color.fromARGB(255, 225, 173, 235),
             leading: IconButton(
               icon: const Icon(Icons.arrow_back),
               onPressed: () {},
             ),
             actions: [
               IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.settings,
                   color: Color.fromARGB(255, 165, 100, 219),
                 ),
@@ -115,12 +101,14 @@ class HomePage extends StatelessWidget {
                     children: [
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(255, 214, 135, 228)),
+                          backgroundColor:
+                              const Color.fromARGB(255, 214, 135, 228)),
                       onPressed: () {},
                       child: const Text("Cancel")),
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(255, 214, 135, 228)),
+                          backgroundColor:
+                              const Color.fromARGB(255, 214, 135, 228)),
                       onPressed: () {},
                       child: const Text("Save")),
                 ])),
