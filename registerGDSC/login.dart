@@ -15,7 +15,6 @@ class _MyWidgetState extends State<login> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
               width: 500,
@@ -47,6 +46,7 @@ class _MyWidgetState extends State<login> {
               child: TextField(
                 obscureText: false,
                 cursorColor: Colors.purple,
+                keyboardType: TextInputType.name,
                 style: const TextStyle(
                   color: Colors.purple,
                   fontSize: 18,
@@ -78,6 +78,7 @@ class _MyWidgetState extends State<login> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                keyboardType: TextInputType.emailAddress,
                 cursorColor: Colors.purple,
                 style: const TextStyle(
                   //fieldINPUT
@@ -121,6 +122,52 @@ class _MyWidgetState extends State<login> {
                 decoration: InputDecoration(
                   filled: true,
                   labelText: 'Password',
+                  labelStyle: const TextStyle(
+                    color: Colors.purple,
+                  ),
+                  prefixIcon: const Icon(
+                    Icons.lock,
+                    color: Colors.purple,
+                  ),
+                  border: UnderlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(
+                      color: Colors.purple,
+                    ),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      _passwordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
+                      color: Colors.grey,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _passwordVisible = !_passwordVisible;
+                      });
+                    },
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                cursorColor: Colors.purple,
+                obscureText: !_passwordVisible,
+                style: const TextStyle(
+                  //inutfield
+                  color: Colors.purple,
+                  fontSize: 18,
+                ),
+                decoration: InputDecoration(
+                  filled: true,
+                  labelText: 'Comfirm password',
                   labelStyle: const TextStyle(
                     color: Colors.purple,
                   ),
